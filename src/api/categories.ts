@@ -24,3 +24,8 @@ export const deleteCate = (id: number) => {
 export const updateCate = (data: any) => {
     return instance.put(`/categories/${data.id}`,data);
 }
+
+export const getCategoriesDetails = (id:any) => {
+    const url = `/categories/${id}?_embed=products`
+    return instance.get(url)
+}

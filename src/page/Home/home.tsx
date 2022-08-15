@@ -8,17 +8,30 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { SearchOutlined } from '@ant-design/icons';
 import Sli from '../../asset/image/Rectangle.png';
+import { getCategories, getCategoriesDetails } from "../../api/categories";
 const { Meta } = Card;
 export type PRODUCT_TYPE = {
+  map(arg0: (item: any) => JSX.Element | null): React.ReactNode;
   id: number,
   name: string,
   originalPrice: number,
   image: string,
   saleOffPrice: number,
-  description: string
+  description: string,
+  category:number
 };
+
+export type CATEGORIES_TYPE = {
+  id: number,
+  name: string,
+};
+
+
+
 const HomePage = () => {
   const [products, setProducts] = useState<PRODUCT_TYPE[]>([]);
+
+  const [categories, setCategories] = useState<CATEGORIES_TYPE[]>([]);
   
   const [value, setValue] = useState("");
   const handleGetProduct = async () => {
@@ -26,8 +39,20 @@ const HomePage = () => {
     setProducts(response.data);
   }
 
+  const handleGetCategories = async () => {
+    const response = await getCategories();
+    setCategories(response.data);
+  }
+
+const categoriesDetails = async (id:any) =>{
+  const response = await getCategoriesDetails(id);
+  console.log("categoies",response.data.products);
+  setProducts(response.data.products)
+}
+
   useEffect(() => {
     handleGetProduct();
+    handleGetCategories();
   }, []);
 
   const handleSearch = async (e: any) => {
@@ -51,9 +76,11 @@ const HomePage = () => {
         <Col span={6} pull={18}>
           <Nav1>
             <UL>
-              <LI><A href="">Điện thoại</A></LI>
-              <LI><A href="">Máy tính bảng</A></LI>
-              <LI><A href="">Nhà thông minh</A></LI>
+              {
+                categories.map((item:CATEGORIES_TYPE) => (
+                  <LI onClick={() => categoriesDetails(item.id)}>{item.name}</LI>
+                ))
+              }
             </UL>
           </Nav1>
         </Col>

@@ -97,12 +97,12 @@ const AddProductPage: React.FC = () => {
 							<Col span={12}>
 								<Form.Item
 									label="Phân loại"
-									name="cat_id"
+									name="categoryId"
 									rules={[{ required: true }]}
 								>
 									<Select style={{ width: '100%' }} size="large">
 										<Option value={1}>Điện thoại</Option>
-										<Option value={2}>Laptop</Option>
+										<Option value={4}>Phụ kiên</Option>
 										<Option value={3}>Máy tính bảng</Option>
 									</Select>
 								</Form.Item>

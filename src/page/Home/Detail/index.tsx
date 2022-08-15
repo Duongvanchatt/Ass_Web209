@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Card } from 'antd';
 import { PRODUCT_TYPE } from '../home';
 import { Navigate, useParams } from 'react-router-dom';
-import { getPro } from '../../../api/product';
+import { getPro, getAll } from '../../../api/product';
 import { useDispatch } from 'react-redux'
 import { saveTotal } from '../../../redux/cartSlice';
 import axios from 'axios';
@@ -12,7 +12,7 @@ const { Meta } = Card;
 const DetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<PRODUCT_TYPE>();
-  const [categories, setCategories] = useState<PRODUCT_TYPE>();
+  const [allProducts, setGetAllProducts] = useState<PRODUCT_TYPE[]>([]);
   const dispatch = useDispatch()
 
   const handleGetProductDetail = async () => {
@@ -20,8 +20,17 @@ const DetailPage = () => {
     setProduct(response.data);
   }
 
+  // Lấy tất cả sản phẩm
+  const handleProducts = async () => {
+    const response = await getAll();
+    setGetAllProducts(response.data);
+    console.log("allProducs",response.data);
+    
+  }
+
   useEffect(() => {
     handleGetProductDetail();
+    handleProducts();
   }, []);
    
   
@@ -57,45 +66,19 @@ const DetailPage = () => {
       <Divider orientation="left">Sản phâm cùng loại</Divider>
       <Product>
         <Row>
-          <Col span={6}>
-            <Card hoverable style={{ width: 240 }}
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" />
-              <p>1200.000</p>
-              <button>Mua hàng</button>
-            </Card>
-          </Col>
-
-          <Col span={6}>
-            <Card hoverable style={{ width: 240 }}
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" />
-              <p>1200.000</p>
-              <button>Mua hàng</button>
-            </Card>
-          </Col>
-
-          <Col span={6}>
-            <Card hoverable style={{ width: 240 }}
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" />
-              <p>1200.000</p>
-              <button>Mua hàng</button>
-            </Card>
-          </Col>
-
-          <Col span={6}>
-            <Card hoverable style={{ width: 240 }}
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-            >
-              <Meta title="Europe Street beat" />
-              <p>1200.000</p>
-              <button>Mua hàng</button>
-            </Card>
-          </Col>
+          {
+            allProducts.map((item:any) => (
+              item.category == product?.category ?  <Col span={6}>
+              <Card hoverable style={{ width: 240 }}
+                cover={<img alt="example" src={item.image} />}
+              >
+                <Meta title="Europe Street beat" />
+                <p>{item.name}</p>
+                <button>Mua hàng</button>
+              </Card>
+            </Col> : null
+            ))
+          }
         </Row>
       </Product>
 
