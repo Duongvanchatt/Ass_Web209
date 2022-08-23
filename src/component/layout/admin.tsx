@@ -21,7 +21,7 @@ const item3: MenuProps['items'] = [
 const AdminLayout: React.FC = () => (
   <Layout>
     <HeaderCustom>
-      <Logo src={LogoImage} />  
+      <Link to="/"><Logo src={LogoImage} /></Link>  
     </HeaderCustom>
     <Layout>
       <Sider

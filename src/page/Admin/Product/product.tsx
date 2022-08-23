@@ -17,6 +17,7 @@ const ProductAdminPage = () => {
         description: string;
         originalPrice: number;
         image: string;
+        categoryId: number
     }
 
     const columns: ColumnsType<DataType> = [
@@ -68,9 +69,9 @@ const ProductAdminPage = () => {
             key: 'description',
         },
         {
-            title: 'Cate_id',
-            dataIndex: 'cat_id',
-            key: 'cat_id',
+            title: 'categoryId',
+            dataIndex: 'categoryId',
+            key: 'categoryId',
         },
         {
             title: 'Ảnh',
@@ -118,7 +119,7 @@ const ProductAdminPage = () => {
         <>
             <Breadcrumb>
                 <Typography.Title level={2} style={{ margin: 0 }}>
-                    Điện thoại
+                    Products
                 </Typography.Title>
                 <Link to="/admin/product/add">
                     <Button type="dashed" shape="circle" icon={<PlusOutlined />} />

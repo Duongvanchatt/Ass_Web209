@@ -1,10 +1,18 @@
 import React from "react";
 import styled from 'styled-components'
-import { ShoppingCartOutlined, UserAddOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom'
+import { ShoppingCartOutlined, UserAddOutlined, LockOutlined } from '@ant-design/icons';
+import { Link, useNavigate } from 'react-router-dom'
 const IconHeader = () => {
+    const navigate = useNavigate();
+    const logout = () =>{
+        localStorage.removeItem("user");
+        navigate("/");
+    }
     return (
         <Icon>
+            {localStorage.getItem("user") ? <p className="text-2xl mt-8" onClick={() => logout()}>Logout</p> : 
+            
+            <div className="">
             <Link to="/signup">
             <UserAddOutlined />
             </Link>
@@ -12,6 +20,14 @@ const IconHeader = () => {
             <Link to="/cart">
                 <ShoppingCartOutlined />
             </Link>
+
+            <Link to="/signin">
+                <LockOutlined />
+            </Link>
+            </div>
+            }
+            
+            
         </Icon>
     )
 }
@@ -25,4 +41,5 @@ const Icon = styled.div`
     color: white;
     margin-left: 100px;
     margin-top: -10px;
+    margin-right: 10px;
 `

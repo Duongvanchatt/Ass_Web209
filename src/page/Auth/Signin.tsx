@@ -1,20 +1,21 @@
 import React, {Fragment, useState}  from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { createUser } from "../../api/user";
+import { createUser, signin } from "../../api/user";
 
 export type LoginProps = {
-    name: string,
     password: string,
     email: string
 };
 
-function Signup () {
+function Signin () {
+     const navigate = useNavigate();
      const {register, handleSubmit, formState: {errors}} = useForm <LoginProps>();
-     const onSubmit: SubmitHandler<LoginProps> = (data)=>{
-        createUser(data);
-        alert("tạo tài khoản thành công");
-     }  
+     const onSubmit: SubmitHandler<LoginProps> = async (data)=>{
+        const Signin:any = await signin(data);
+        navigate("/");
+        localStorage.setItem("user", JSON.stringify(Signin.data.user));
+     }
     return (
 <div>
  <section className="h-screen">
@@ -34,7 +35,7 @@ function Signup () {
       <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-row items-center justify-center lg:justify-start">
-            <p className="text-lg mb-0 mr-4">Sign up with</p>
+            <p className="text-lg mb-0 mr-4">Sign in with</p>
             <button
               type="button"
               data-mdb-ripple="true"
@@ -87,15 +88,7 @@ function Signup () {
             <p className="text-center font-semibold mx-4 mb-0">Or</p>
           </div>
 
-          <div className="mb-6">
-            <input
-              type="text"
-              className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Name"
-              {...register ("name")}
-            />
-          </div>
-
+    
           <div className="mb-6">
             <input
               type="text"
@@ -120,7 +113,7 @@ function Signup () {
             <button
               className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
-              Sign up
+              Sign in
             </button>
             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
               Don't have an account?
@@ -140,6 +133,6 @@ function Signup () {
   );
  }
 
-export default Signup;
+export default Signin;
 
 

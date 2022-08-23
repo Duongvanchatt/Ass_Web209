@@ -18,7 +18,7 @@ export type PRODUCT_TYPE = {
   image: string,
   saleOffPrice: number,
   description: string,
-  category:number
+  categoryId:number
 };
 
 export type CATEGORIES_TYPE = {
@@ -87,7 +87,7 @@ const categoriesDetails = async (id:any) =>{
       </Row><br></br><br />
 
       <Div>
-        <h2 className="font-bold text-2xl">Sản phẩm nổi bật</h2>
+        <h2 className="font-bold text-2xl">Products</h2>
         <form action="" onSubmit={handleSearch}>
           <div className="mb-3 pt-0 flex">
             <input type="text" value={value}
@@ -105,13 +105,15 @@ const categoriesDetails = async (id:any) =>{
             products.map(product =>
               <Col >
                 <Col1>
-                  <Card hoverable style={{ width: 200 }}
-                    cover={<img alt="example" src={product.image} style={{ width: 200, height: 200 }} />}
+                  <Card hoverable style={{ width: 250}}
+                    cover={<img alt="example" src={product.image} style={{ width: 350, height: 220}} />}
                   >
-                    <Link to={`/detail/${product.id}`}><Meta title={product.name} /></Link>
+                   <div className="mt-3">
+                   <Link to={`/detail/${product.id}`} ><Meta title={product.name} /></Link>
                     <Ph>{product.originalPrice} <span>VND</span></Ph>
                     <Ph1>{product.saleOffPrice} <span>VND</span></Ph1>
                     <But>Mua hàng</But>
+                   </div>
                   </Card>
                 </Col1>
               </Col>

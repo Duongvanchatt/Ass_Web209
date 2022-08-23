@@ -71,10 +71,9 @@ const EditProduct = () => {
 			setBase64Image(reader?.result);
 		}
 	}
-
-	return (
+  	return (
 		<div>
-			<Typography.Title level={3}>Thêm mới sản phẩm</Typography.Title>
+			<Typography.Title level={3}>Sửa sản phẩm</Typography.Title>
          <Row gutter={16}>
 			<Col span={10}>
 						<Controller

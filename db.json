@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "name": "Nguyễn Văn Chất",
-      "password": "123456@",
+      "email": "trungntph15864@gmail.com",
+      "password": "$2a$10$ngE3SPqSXALXr8KoItrKce/FIWb1ELwJYAcbkA9EAFLlxMOGNJ/Uq",
+      "name": "Điện thoại Sam Sung A30 45",
+      "id": 1
+    },
+    {
       "email": "huuduy18102000@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "chất dv",
-      "password": "123456@yyy",
-      "email": "0926032863@edu.vn",
-      "id": 7
-    },
-    {
-      "name": "chất",
-      "email": "hoanglinhtk241@gmail.com",
-      "password": "427",
-      "id": 8
+      "password": "$2a$10$uEZV3FD0AbA8Y74t.yZcYewUFJTDqQq1OoVP3se0x7VChlHWBc8mK",
+      "name": "Nguyễn Văn Chất",
+      "id": 2
     }
   ],
   "products": [
@@ -91,24 +85,54 @@
       "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660041920/anhhtus/a0qwxrnl9nv07spyd0bh.jpg"
     },
     {
-      "name": "Máy tính bảng 2022 bản limit(10)",
-      "originalPrice": 150000000,
-      "saleOffPrice": 12000000,
-      "categoryId": 3,
-      "feature": "tgarrhw",
-      "description": "Tin tưởng chủ sở hữu bản quyền Hạn chế kiếm tiền từ nội dung vi phạm Bị tính phí cho bản sao của nội dung được đề cập Nhận thấy nội dung tương tự xuất hiện ở nơi nào khác trên Internet Đã mua nội dung bao gồm một bản sao cứng hoặc bản sao kỹ thuật số Tự ghi lại nội dung từ TV, rạp chiếu phim hoặc radio Tự sao chép nội dung từ sách giáo khoa, áp phích phim hoặc ảnh Khẳng định rằng \"không nhằm mục đích vi phạm bản quyền\"",
-      "id": 19,
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660064918/anhhtus/fs9ft4spm4t2bcvaoym8.jpg"
-    },
-    {
-      "name": "ỷ",
-      "originalPrice": 46,
-      "saleOffPrice": 7637,
+      "name": "Macbook Pro 16 2020",
+      "originalPrice": 46000000,
+      "saleOffPrice": 34000000,
       "categoryId": 4,
       "feature": "hxdfjhd",
-      "description": "fsnz",
+      "description": "Laptop Apple Macbook sở hữu CPU Apple M2 với 8 nhân CPU và 10 nhân GPU mang lại một sức mạnh đột phá, hỗ trợ người dùng chạy mượt mà các tác vụ của một chiếc laptop đồ họa - kỹ thuật như thiết kế, chỉnh ảnh hay render video trên các phần mềm của Adobe như: Photoshop, Premiere,...\nMacBook Pro M2 2022 - Chip Apple M2\n\nHệ điều hành macOS phát triển và phân phối độc quyền bởi Apple được thiết kế với giao diện đẹp mắt, dễ dùng cùng kho ứng dụng đồ sộ mang đến sự tiện lợi tối đa cho mọi công việc, học tập của bạn, đồng thời giúp cho khả năng hoạt động mượt mà hơn đáng kể.\n\nMàn hình Retina kết hợp công nghệ True Tone mang lại hình ảnh sống động, lôi cuốn\nLaptop sở hữu màn hình 13.3 inch cùng độ phân giải Retina (2560 x 1600) sắc nét, màu sắc trung thực. Độ tương phản cao nhờ độ sáng 500 nits, công nghệ màn hình IPS đem lại khả năng hiển thị rõ ràng dù thay đổi vị trí nhìn ở bất kì đâu. \n\n\n\n\n\n\n\n\n\n\n\n\n\n",
       "id": 20,
-      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660500512/anhhtus/bseb1pbrqdjmxpi5oyaw.jpg"
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660571351/anhhtus/jxuyhfw5rn2vez5yqt1u.jpg"
+    },
+    {
+      "name": "Laptop MacBook Pro 14 M1 Max 2021 10-core CPU/32GB/512GB/24-core GPU (Z15G) ",
+      "originalPrice": 30000000,
+      "saleOffPrice": 29900000,
+      "categoryId": 4,
+      "feature": "afsnmdv xv",
+      "description": "Apple MacBook M1 Pro 14 inch bao bọc bởi lớp vỏ kim loại nguyên khối bằng nhôm tái chế cứng cáp, bền bỉ, kiểu dáng được cải tiến so với những dòng Mac trước đây, phong cách đơn giản mà đầy tinh tế. Laptop có độ dày 15.5 mm và trọng lượng 1.6 kg khá gọn gàng, thuận tiện đồng hành cùng bạn mọi lúc mọi nơi để học tập, làm việc, giải trí hiệu quả.",
+      "id": 21,
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660573581/anhhtus/jcobvk1dgscuqcrkvciw.jpg"
+    },
+    {
+      "name": " MacBook Pro 13  Max 2022  (Z14G) ",
+      "originalPrice": 42000000,
+      "saleOffPrice": 41500000,
+      "categoryId": 4,
+      "feature": "fuaeshzthra",
+      "description": "Apple MacBook M1 Pro 14 inch bao bọc bởi lớp vỏ kim loại nguyên khối bằng nhôm tái chế cứng cáp, bền bỉ, kiểu dáng được cải tiến so với những dòng Mac trước đây, phong cách đơn giản mà đầy tinh tế. Laptop có độ dày 15.5 mm và trọng lượng 1.6 kg khá gọn gàng, thuận tiện đồng hành cùng bạn mọi lúc mọi nơi để học tập, làm việc, giải trí hiệu quả.",
+      "id": 22,
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660573690/anhhtus/rvrzeghhdm43hldgq05j.jpg"
+    },
+    {
+      "name": " MacBook M2 Max 2021",
+      "originalPrice": 61000000,
+      "saleOffPrice": 60000000,
+      "categoryId": 4,
+      "feature": "rhgfwa",
+      "description": "Với vẻ ngoài vuông vắn cùng lớp sơn nhám Đen quen thuộc; HP Victus 16 dễ khiến người ta liên tưởng tới các sản phẩm Omen ở phân khúc cao cấp. Nhưng nếu nhìn kỹ, không khó để thấy rằng sản phẩm của chúng ta còn thú vị hơn vậy nhiều. Chẳng hạn như ở nắp máy, HP đã có một logo chữ V bóng bẩy, tinh tế dành riêng cho dòng Victus. Hay phần khe thoát gió phía sau cũng được thiết kế lại, tràn hẳn ra hai bên để tăng cường lưu thông khí. ",
+      "id": 23,
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660607383/anhhtus/y733inh5ja8dltn7tiyz.jpg"
+    },
+    {
+      "name": "Lò nướng chân không điện tử",
+      "originalPrice": 289000,
+      "saleOffPrice": 6180000,
+      "categoryId": 1,
+      "feature": "Lò Nướng Chân Không Điện Tử Lock&amp;Lock EJF291BLK sở hữu thiết kế nhỏ gọn nhưng vẫn\nsang trọng, màu đen hiện đại, phù hợp với bất kỳ không gian căn bếp nào. Cửa sổ sản phẩm làm bằng\n\nkính cường lực trong suốt, bền và an toàn khi sử dụng, giúp bạn dễ dàng quan sát các món ăn được\nnấu bên trong.\n Kết nối liền mạch giữa các thiết bị, trình chiếu không dây nâng tầm hiệu quả\n Thiết kế thanh lịch, tối giản hoà hợp với mọi không gian làm việc.",
+      "description": "eahdfje",
+      "id": 24,
+      "image": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1660783015/anhhtus/vlcbxnntuumlgneluaar.jpg"
     }
   ],
   "categories": [
@@ -121,7 +145,7 @@
       "name": "Máy tính bảng"
     },
     {
-      "name": "Phụ kiện",
+      "name": "Labtop",
       "id": 4
     }
   ]

@@ -4,7 +4,7 @@ import { Typography, Button, Table, Input } from 'antd';
 import { Link } from 'react-router-dom'
 import { SearchOutlined, PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
-import { deleteUser, getUser } from "../../api/user";
+import { deleteUser, getUser, getUsers } from "../../api/user";
 
 
 const SignupAdmin = () => {
@@ -23,7 +23,7 @@ const SignupAdmin = () => {
             render: text => <a>{text}</a>,
         },
         {
-            title: 'Tên sản phẩm',
+            title: 'Tên',
             dataIndex: 'name',
             filterDropdown: ({setSelectedKeys, selectedKeys,confirm}) => {
                 return (<Input autoFocus placeholder="text" 
@@ -65,6 +65,7 @@ const SignupAdmin = () => {
             render: (_, record) => (
                 <IconAdmin>
                     <div><DeleteOutlined onClick={() => onRemove(record.id)} /></div>
+                    <div className=""><Link to={`/admin/user/edit/${record.id}`}><EditOutlined /></Link></div>
                 </IconAdmin>
             ),
         },
@@ -73,7 +74,7 @@ const SignupAdmin = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getUser()
+                const data = await getUsers()
                 setDataTable(data.data)
             } catch (err) {
 

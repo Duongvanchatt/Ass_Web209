@@ -4,8 +4,16 @@ export const createUser = (data:any) => {
     const url = "/users"
     return instance.post(url, data)
 }
+export const signin = (data:any) => {
+    const url = "/signin"
+    return instance.post(url, data)
+}
 
-export const getUser = () => {
+export const getUser = (id: number) => {
+    const url = `/users/${id}`
+    return instance.get(url)
+}
+export const getUsers = () => {
     const url = "/users"
     return instance.get(url)
 }

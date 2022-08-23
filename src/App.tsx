@@ -14,6 +14,8 @@ import AddCatePage from './page/Admin/Categories/addCate';
 import EditCate from './page/Admin/Categories/editCate';
 import Signup from './page/Auth/Signup';
 import SignupAdmin from './page/Auth/ListUsers';
+import EditUser from './page/Auth/editUser';
+import Signin from './page/Auth/Signin';
 function App() {
   return (
        <div className="App">
@@ -24,12 +26,14 @@ function App() {
             <Route path='cart' element={<Cart/>}/>
           </Route>
           <Route path='signup' element={<Signup/>}/>
+          <Route path='signin' element={<Signin/>}/>
           {/* Admin layout */}
         <Route path='admin' element={<AdminLayout/>}>
           <Route index element={<ProductAdminPage/>}/>
           
           <Route path='user'>
               <Route index element={<SignupAdmin />} />
+              <Route path='edit/:id' element={<EditUser/>}/>
           </Route>
 
           <Route path='product'>

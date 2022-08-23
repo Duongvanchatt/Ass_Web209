@@ -23,6 +23,26 @@ const CategoryAdminPage = () => {
         {
             title: 'Tên danh mục',
             dataIndex: 'name',
+            filterDropdown: ({setSelectedKeys, selectedKeys,confirm}) => {
+                return (<Input autoFocus placeholder="text" 
+                value={selectedKeys[0]}
+                onChange={(e)=>{
+                    setSelectedKeys(e.target.value?[e.target.value]:[])
+                }}
+                onPressEnter={() => {
+                confirm()
+                }}
+                    onBlur={() => {
+                        confirm()
+                     }}></Input>
+                );
+            },
+            filterIcon: () => {
+                return <SearchOutlined />
+            },
+            onFilter: (value,record)=>{
+                return record.name.toLowerCase().includes(value.toString());
+            },
             key: 'name',
             render: text => <a>{text}</a>,
         },

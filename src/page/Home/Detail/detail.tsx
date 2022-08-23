@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 import { saveTotal } from '../../../redux/cartSlice';
 import axios from 'axios';
 const { Meta } = Card;
-const DetailPage = () => {
+const Detail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<PRODUCT_TYPE>();
   const [allProducts, setGetAllProducts] = useState<PRODUCT_TYPE[]>([]);
@@ -53,13 +53,7 @@ const DetailPage = () => {
             <But onClick={() => {
               dispatch(
                 saveTotal(
-                  {
-                    image: product?.image,
-                    name: product?.name,
-                    originalPrice: product?.originalPrice,
-                    description: product?.description,
-                    quantity: 1
-                  }
+                  product
                 )
               )
               alert("Them thanh cong");
@@ -141,4 +135,4 @@ const BUT = styled.button`
 margin-right: 20px;
 `
 
-export default DetailPage;
+export default Detail;
